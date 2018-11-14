@@ -41,9 +41,19 @@ target: salary
 ## 模型搭建
 本次使用神经网络模型
 
+关于模型训练的最佳实践： 
+
 1.切分mini-batches
 
 2. 三个部分（title,description,others)分别训练一个encoder,然后喂给一个总的神经网络
+
+对于文本，得到index矩阵后，通过embedding层获得word vector,然后通过conv层提取特征，max_pooling层进一步提取并统一维度。
+
+关于nlp中的max_pooling:
+
+对于categorical，直接使用Dense层
+
+最后通过Concatenate层进行合并，再训练一个Dense层
 
 ## 模型解释
 
